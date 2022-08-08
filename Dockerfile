@@ -1,6 +1,6 @@
 FROM ubuntu:focal
 
-ARG GO_VERSION=1.18.3
+ARG GO_VERSION=1.19
 ARG GO_OS=linux
 ARG GO_ARCH=amd64
 
@@ -18,14 +18,14 @@ WORKDIR /tmp/
 RUN apt-get update \
     && apt-get -y install --no-install-recommends apt-utils dialog 2>&1 \
     && apt-get -y install \
-		    gcc \
+	gcc \
         ca-certificates \
         git \
         lsb-release \
         curl \
         jq \
         unzip \
-		    make \
+	make \
 		# Clean up
     && apt-get autoremove -y \
     && apt-get clean -y
